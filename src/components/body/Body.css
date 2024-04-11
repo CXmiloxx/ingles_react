@@ -1,3 +1,6 @@
+/* Body.css */
+
+/* Estilos para el contenedor de letras */
 .letras-container {
     padding: 20px;
 }
@@ -11,7 +14,7 @@
 }
 
 .letra-btn {
-    background-color: #005f73;
+    background-color: #1417d8;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -25,7 +28,7 @@
 }
 
 .letra-btn:hover {
-    background-color: #005f73;
+    background-color: #1c789f;
 }
 
 .palabra {
@@ -56,4 +59,35 @@
 
 .palabra button:hover {
     background-color: #005f73;
+}
+
+@media screen and (max-width: 768px) {
+    .letras-container {
+        padding: 10px;
+    }
+
+    .letra-btn-container {
+        justify-content: flex-start;
+    }
+
+    .letra-btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .letra-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .palabra {
+        padding: 16px;
+    }
+
+    .palabra button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

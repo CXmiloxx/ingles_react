@@ -1,3 +1,4 @@
+
 .header {
     background-color: #81c7e6; 
     color: #ffffff; 
@@ -39,4 +40,36 @@ nav ul li a {
 nav ul li a:hover {
     transition: .5s linear ;
     color: rgb(229, 228, 236);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .cont-img img {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cont-img img {
+        width: 40px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
 }
