@@ -1,8 +1,8 @@
 // src/components/header/Header.jsx
 
 import fondo from '../img/glosary.jpeg';
-import './Header.css'; 
-function Header() {
+import './Nav.css'; 
+function Nav() {
     return (
         <header className="header">
             <div className="logo cont-img">
@@ -29,4 +29,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Nav;

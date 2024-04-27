@@ -1,11 +1,11 @@
+import Nav from "./components/nav/Nav"
 import Body from './components/body/Body'
-import Header from './components/header/Header'
 
 export default function App() {
   return (
     <div>
-        <Header/>
-        <Body/>
+      <Nav/>
+      <Body/>
     </div>
   )
 }
