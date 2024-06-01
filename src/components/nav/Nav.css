@@ -1,5 +1,5 @@
 .header {
-    background-color: #81c7e6;
+    background-color: #1417d8;
     color: #ffffff;
     padding: 20px;
     display: flex;
@@ -8,15 +8,14 @@
 }
 
 .cont-img img {
-    width: 70px;
+    width: 80px;
     height: 70px;
-    border-radius: 50%;
-    margin-right: 20px;
+    border-radius: 10%;
 }
 
 h1 {
     font-size: 22px;
-    color: #111111;
+    color: #f3f0f0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0; /* Elimina el margen para un mejor espacio */
 }
@@ -27,21 +26,6 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center; /* Centra los elementos verticalmente */
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último elemento */
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #111111;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 nav ul li a:hover {

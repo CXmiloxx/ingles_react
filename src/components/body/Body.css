@@ -1,12 +1,3 @@
-/* Estilos para el contenedor principal */
-.body-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Aumenta el espacio entre los elementos */
-    padding: 30px; /* Aumenta el espacio alrededor del contenido */
-    justify-content: center;
-}
-
 /* Estilos para el contenedor de las letras */
 .abecedario-container {
     display: flex;
@@ -31,7 +22,7 @@
 }
 
 .letra-btn:hover {
-    background-color: #1c789f;
+    background-color: #081557;
 }
 
 /* Estilos para el contenedor de las palabras */
@@ -98,10 +89,12 @@
     align-items: center;
     width: 200px;
     margin: 15px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     background-color: black;
     color: #f2f2f2;
+    transition: ease 0.5s;
+    border: none;
 }
 
 .pronunciar-btn:hover{
@@ -109,4 +102,57 @@
     background-color: #1417d8;
     border-radius: 50px;
     color: #f2f2f2;
+    border: none;
+}
+.total-palabras{
+    color:  #111112;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+.titulo{
+    color:  #1417d8;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+.palabras{
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.palabras-atras{
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+.btnVolver {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    z-index: 9999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.btnParaVolver {
+    border-radius: 25px;
+    background-color: #1417d8;
+    border: none;
+    color: white;
+    padding: 12px 20px; /* Ajusta el padding del botón */
+    font-size: 16px; /* Ajusta el tamaño de la letra */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Agrega transiciones suaves */
+    outline: none; /* Elimina el borde al hacer clic */
+}
+
+.btnParaVolver:hover {
+    background-color: #081557;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
 }
