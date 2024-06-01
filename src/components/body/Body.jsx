@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import './Body.css';
-import { palabrasIngles, palabrasEspanol, pronunciaciones } from './palabras'; // Importar datos de palabras en inglés, español y pronunciaciones
+import { palabrasIngles, palabrasEspanol, pronunciaciones } from './palabras'; // Importar datos de palabras en ingles, español y pronunciaciones
 import descripcionesPalabras from './descripcionesPalabras'; // Importar descripciones de palabras
 
 function Body() {
     const [resultados, setResultados] = useState([]); // Estado para almacenar los resultados de la búsqueda
     const [letraSeleccionada, setLetraSeleccionada] = useState(''); // Estado para almacenar la letra seleccionada
 
-    // Función para buscar términos que comiencen con la letra proporcionada
+    // Funcion para buscar terminos que comiencen con la letra proporcionada
     const buscarTerminos = (letra) => {
         const resultadosLetra = [];
 
         for (let i = 0; i < palabrasIngles.length; i++) {
             if (palabrasIngles[i].charAt(0).toLowerCase() === letra.toLowerCase()) {
-                // Agregar descripción si está disponible
+                // Agregar descripcion si esta disponible
                 const index = palabrasIngles.indexOf(palabrasIngles[i]);
                 const descripcion = descripcionesPalabras[index];
                 resultadosLetra.push({
@@ -21,7 +21,7 @@ function Body() {
                     palabraIngles: palabrasIngles[i],
                     pronunciacion: pronunciaciones[i],
                     numeroPalabra: i + 1,
-                    descripcion: descripcion || '' // Usar descripción si está disponible, de lo contrario, cadena vacía
+                    descripcion: descripcion || '' // Usar descripción si esta disponible de lo contrario cadena vacía
                 });
             }
         }
@@ -35,7 +35,7 @@ function Body() {
         buscarTerminos('A');
     }, []); // El segundo argumento del useEffect (un array vacío) asegura que este efecto se ejecute solo una vez
 
-    // Función para crear botones de letras
+    // Funcion para crear botones de letras
     const crearBotonesLetras = () => {
         const letras = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
         return letras.map(letra => (
