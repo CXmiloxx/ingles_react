@@ -8,6 +8,7 @@ function Body() {
     const [resultados, setResultados] = useState([]); // Estado para almacenar los resultados de la búsqueda
     const [letraSeleccionada, setLetraSeleccionada] = useState(''); // Estado para almacenar la letra seleccionada
 
+
     // Funcion para buscar terminos que comiencen con la letra proporcionada
     const buscarTerminos = (letra) => {
         const resultadosLetra = [];
@@ -85,46 +86,56 @@ function Body() {
         });
     };
 
-    return (
-        <div className="body-container">
-            <p className="total-palabras">All the words in the glossary: {totalPalabras}</p>
-            <div className="abecedario-container">
-                {crearBotonesLetras()}
-            </div>
-            <p className='palabras'>WORDS WITH LETTER: {letraSeleccionada}</p>
-            <div className='btnVolver'>
-                <button className='btnParaVolver' onClick={VolverIncio}>BACK</button>
-            </div>
-            
-            <div className="resultado-container">
-                {resultados.length > 0 ? (
-                    resultados.map((resultado, index) => (
-                        <div key={index} className="card" onMouseEnter={() => volterarCard(index)} onMouseLeave={() => volterarCard(index)}>
-                            <div className="card-inner">
-                                <div className="card-front">
-                                    <h2 className="titulo">{resultado.palabraIngles}</h2>
-                                    <p className='palabras'>{resultado.descripcion}</p>
-                                    <p className='palabras'>Number of the word: {resultado.numeroPalabra}</p>
+    const abrir =()=>{
+        document.querySelector('.body-container').removeAttribute('hidden');
+        document.querySelector('.ContentHome').setAttribute('hidden', true);
+    }
 
-                                </div>
-                                <div className="card-back">
-                                    <h2 className="titulo">INFORMATION</h2>
-                                    <p className='palabras-atras'>Words in english: {resultado.palabraIngles}</p>
-                                    <p className='palabras-atras'>Words in spanish: {resultado.palabraEspanol}</p>
-                                    <p className="palabras-atras">phonetic: {resultado.pronunciacion}</p>
-                                    {/* Botón para pronunciar la palabra */}
-                                    <button className="pronunciar-btn" onClick={() => pronunciarPalabra(resultado.palabraIngles)}>pronuntation</button>
+    return (
+        <div>
+            <div className='ContentHome'>
+                <button onClick={abrir}><img src={icon} alt="" /><p className='h1Home'>Touch me</p></button>
+            </div>
+            <div className="body-container" hidden>
+                <p className="total-palabras">All the words in the glossary: {totalPalabras}</p>
+                <div className="abecedario-container">
+                    {crearBotonesLetras()}
+                </div>
+                <p className='palabras'>WORDS WITH LETTER: {letraSeleccionada}</p>
+                <div className='btnVolver'>
+                    <button className='btnParaVolver' onClick={VolverIncio}>BACK</button>
+                </div>
+                
+                <div className="resultado-container">
+                    {resultados.length > 0 ? (
+                        resultados.map((resultado, index) => (
+                            <div key={index} className="card" onMouseEnter={() => volterarCard(index)} onMouseLeave={() => volterarCard(index)}>
+                                <div className="card-inner">
+                                    <div className="card-front">
+                                        <h2 className="titulo">{resultado.palabraIngles}</h2>
+                                        <p className='palabras'>{resultado.descripcion}</p>
+                                        <p className='palabras'>Number of the word: {resultado.numeroPalabra}</p>
+
+                                    </div>
+                                    <div className="card-back">
+                                        <h2 className="titulo">INFORMATION</h2>
+                                        <p className='palabras-atras'>Words in english: {resultado.palabraIngles}</p>
+                                        <p className='palabras-atras'>Words in spanish: {resultado.palabraEspanol}</p>
+                                        <p className="palabras-atras">phonetic: {resultado.pronunciacion}</p>
+                                        {/* Botón para pronunciar la palabra */}
+                                        <button className="pronunciar-btn" onClick={() => pronunciarPalabra(resultado.palabraIngles)}>pronuntation</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                ) : (
-                    <div>No terms were found for the selected letter.</div>
-                )}
+                        ))
+                    ) : (
+                        <div>No terms were found for the selected letter.</div>
+                    )}
+                </div>
+                
             </div>
-            
-        </div>
-    );
-}
+            </div>
+        );
+    }
 
-export default Body;
+    export default Body;

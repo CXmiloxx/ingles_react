@@ -1,3 +1,26 @@
+.ContentHome{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.h1Home{
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.ContentHome button{
+    background: white;
+    border: none;
+    margin-top: 5%;
+
+}
+
+
+
+
+
 /* Estilos para el contenedor de las letras */
 .abecedario-container {
     display: flex;
