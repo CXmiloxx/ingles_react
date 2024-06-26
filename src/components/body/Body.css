@@ -14,10 +14,20 @@
     background: white;
     border: none;
     margin-top: 5%;
-
+    
 }
-
-
+.ContentHome button:hover{
+    img{
+        transform: scale(1.1);
+        transition: 0.8s ease;
+    }
+    p{
+        color: #1417d8;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    
+}
 
 
 
