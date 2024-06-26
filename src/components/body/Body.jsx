@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Body.css';
 import { palabrasIngles, palabrasEspanol, pronunciaciones } from './palabras'; // Importar datos de palabras en ingles, español y pronunciaciones
 import descripcionesPalabras from './descripcionesPalabras'; // Importar descripciones de palabras
+import icon from '../img/press-button.png';
 
 function Body() {
     const [resultados, setResultados] = useState([]); // Estado para almacenar los resultados de la búsqueda
@@ -86,14 +87,15 @@ function Body() {
 
     return (
         <div className="body-container">
-            <p className="total-palabras">Total palabras en el glosario: {totalPalabras}</p>
+            <p className="total-palabras">All the words in the glossary: {totalPalabras}</p>
             <div className="abecedario-container">
                 {crearBotonesLetras()}
             </div>
-            <p className='palabras'>PALABRAS CON LA LETRA: {letraSeleccionada}</p>
+            <p className='palabras'>WORDS WITH LETTER: {letraSeleccionada}</p>
             <div className='btnVolver'>
-                <button className='btnParaVolver' onClick={VolverIncio}>volver</button>
+                <button className='btnParaVolver' onClick={VolverIncio}>BACK</button>
             </div>
+            
             <div className="resultado-container">
                 {resultados.length > 0 ? (
                     resultados.map((resultado, index) => (
@@ -102,23 +104,22 @@ function Body() {
                                 <div className="card-front">
                                     <h2 className="titulo">{resultado.palabraIngles}</h2>
                                     <p className='palabras'>{resultado.descripcion}</p>
-                                    <p className='palabras'>Número de palabra: {resultado.numeroPalabra}</p>
-                                    {/* Botón para pronunciar la palabra */}
-                                    <button className="pronunciar-btn" onClick={() => pronunciarPalabra(resultado.palabraIngles)}>pronunciar</button>
+                                    <p className='palabras'>Number of the word: {resultado.numeroPalabra}</p>
+
                                 </div>
                                 <div className="card-back">
-                                    <h2 className="titulo">INFORMACIÓN</h2>
-                                    <p className='palabras-atras'>Palabra en inglés: {resultado.palabraIngles}</p>
-                                    <p className='palabras-atras'>Palabra en español: {resultado.palabraEspanol}</p>
-                                    <p className="palabras-atras">Fonética: {resultado.pronunciacion}</p>
+                                    <h2 className="titulo">INFORMATION</h2>
+                                    <p className='palabras-atras'>Words in english: {resultado.palabraIngles}</p>
+                                    <p className='palabras-atras'>Words in spanish: {resultado.palabraEspanol}</p>
+                                    <p className="palabras-atras">phonetic: {resultado.pronunciacion}</p>
                                     {/* Botón para pronunciar la palabra */}
-                                    <button className="pronunciar-btn" onClick={() => pronunciarPalabra(resultado.palabraIngles)}>pronunciar</button>
+                                    <button className="pronunciar-btn" onClick={() => pronunciarPalabra(resultado.palabraIngles)}>pronuntation</button>
                                 </div>
                             </div>
                         </div>
                     ))
                 ) : (
-                    <div>No se encontraron términos para la letra seleccionada.</div>
+                    <div>No terms were found for the selected letter.</div>
                 )}
             </div>
             
